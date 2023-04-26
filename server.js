@@ -4,7 +4,7 @@ const fs = require('fs')
 const uniqid = require('uniqid')
 
 const app = exp();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(exp.json()); //must use this to parse body content that's sent to post requests; req.body will be undefined without this.
 app.use(exp.static('./public')) //makes everything in the public folder static.
